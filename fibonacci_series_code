@@ -1,0 +1,41 @@
+/* Programm of fabonacci series */
+#include <stdio.h>
+#if 0
+void fabonacci_series(unsigned int fibo_numb)
+{
+    unsigned int temp, curr = 0, next = 1, loop_var = 0;
+    while(loop_var < fibo_numb){
+        temp = curr + next;
+        curr = next;
+        next = temp;
+        printf("%d ",temp);
+        loop_var++;
+    }
+}
+#endif
+unsigned int fibonacci_recur(unsigned int fibo_numb)
+{
+    if(fibo_numb == 1) {
+        return 0;
+    }
+    if(fibo_numb == 2) {
+        return 1;
+    } else {
+        return fibonacci_recur(fibo_numb-2) + fibonacci_recur(fibo_numb-1);
+    }
+}
+
+int main() {
+    unsigned int fibo_numb;
+    printf("Main : Enter the positive num for fabonacci series\n");
+    scanf("%d",&fibo_numb);
+    if(fibo_numb < 0) {
+        printf("Please enter the positive non-decimal numb\n");
+        return 0;
+    } else {
+        for(int i = 1; i <= fibo_numb; i++){
+        printf("%d ",fibonacci_recur(i));
+        }
+    }
+    return 0;
+}
