@@ -1,0 +1,25 @@
+/* Programm for binary to decimal conversion */
+#include <stdio.h>
+void binary_to_decimal(unsigned int binary_num){
+    unsigned int rem, deci = 0, base = 1, div, digit = binary_num;
+    while(binary_num > 0){
+        rem = binary_num % 10;
+        div = rem*base;
+        deci += div;
+        base *= 2;
+        binary_num /= 10;
+    }
+    printf("decimal num :%d of binary digit : %d",deci,digit);
+}
+int main() {
+    unsigned int binary_num, j;
+    printf("Main : Enter the positive binary num to convert into decimal\n");
+    scanf("%d",&binary_num);
+    if(binary_num < 0) {
+        printf("Please enter the positive binary numb\n");
+        return 0;
+    } else {
+        binary_to_decimal(binary_num);
+    }
+    return 0;
+}
