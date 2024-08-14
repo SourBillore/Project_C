@@ -1,0 +1,41 @@
+/* Programm to do factorial of given digit */
+#include <stdio.h>
+
+/* Due to interger range, the valid factorial results are
+   from 1 to 31 number only */
+#if 0
+void factorial(unsigned int fact_numb)
+{
+    /* using loop */
+    unsigned int loop_var = 1, fact = 1;
+    while(loop_var <= fact_numb){
+        fact *= loop_var;
+        loop_var++;
+    }
+    printf("The factorial given number : %d is : %d\n",fact_numb,fact);   
+}
+#endif
+//Using recursion
+unsigned int factorial(unsigned int fact_numb){
+#if 1
+      if(fact_numb <= 1){
+          return 1;
+      } else {
+          return (fact_numb * factorial(fact_numb - 1));
+      }
+#endif
+}
+
+int main() {
+    unsigned int fact_numb;
+    printf("Main : Enter the positive\n");
+    scanf("%d",&fact_numb);
+    if(fact_numb < 0) {
+        printf("Please enter the positive non-decimal digit\n");
+        return 0;
+    } else {
+printf("The factorial given number : %d is : %d\n",fact_numb,
+factorial(fact_numb));
+    }
+    return 0;
+}
