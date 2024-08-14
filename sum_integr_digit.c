@@ -11,6 +11,15 @@ void sum_of_interger_digit(unsigned int integr)
         goto ADD;
     }
     printf("The sum of given interger : %d is : %d\n",digit,sum);
+    #if 0
+    // Using loop
+      unsigned int sum = 0,rm,digit = integr, loop_var = 0;
+        while(loop_var < digit){
+            rm = digit%10;
+            digit = digit/10;
+            sum += rm;
+        }
+    #endif
 }
 
 int main() {
