@@ -1,0 +1,31 @@
+/* Programm to reverse the binary bit of given char */
+#include <stdio.h>
+void printf_binary(char ch){
+    unsigned int i,j;
+    for(int j=7; j>=0 ; j--){
+        printf("%d",(ch>>j)&1);
+    }
+}
+
+char reverse_bits(char _ch){
+    unsigned int i,j;
+    for(i=7, j=0; i>j ; i--,j++){
+        if(((_ch>>i)&1) ^ ((_ch>>j)&1)){ //XOR operation
+            _ch = _ch ^ (1<<i);
+            _ch = _ch ^ (1<<j);
+        }
+    }
+    return _ch;
+}
+
+int main() {
+    char ch;
+    printf("Enter a char : ");
+    scanf("%c",&ch);
+    printf("Entered char in integer : %d char : %c\n",ch,ch);
+    printf_binary(ch);
+    ch = reverse_bits(ch);
+    printf("\n");
+    printf_binary(ch);
+    return 0;
+}
