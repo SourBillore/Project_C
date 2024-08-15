@@ -1,6 +1,6 @@
 /* Programm to print string length */
 #include <stdio.h>
-int astrlen(char str[]){
+unsigned int astrlen(char str[]){
     unsigned int count = 0;
     while(str[count] != '\0'){
         count++;
