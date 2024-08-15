@@ -1,0 +1,21 @@
+/* local implementation of strcpy */
+#include <stdio.h>
+#include <string.h>
+
+char* astrcpy(char str1[], char str2[]){
+    int i = 0;
+    while((str1[i]=str2[i]) != '\0'){
+        i++;
+    }
+    return str1;
+}
+
+int main() {
+    char str1[50], str2[50],str3[50];
+    int index = 0;
+    printf("Enter the string to copy: ");
+    scanf("%s",&str2);
+    printf("local impleentation copied string : %s\n",astrcpy(str1,str2));
+    printf("from lib func strcpy : %s\n",strcpy(str3,str2));
+    return 0;
+}
